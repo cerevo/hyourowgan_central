@@ -30,19 +30,42 @@ limitations under the License.
 
 #include "utils.h"
 
+int BLE_tz1em_init(void);
+int BLE_init(uint8_t id);
+void BLE_term(void);
+void BLE_main(void);
+
+uint8_t msg[80];
+
 int main(void)
 {
+    int ret;
     /* Initialize */
+    ret = BLE_tz1em_init();
     TZ01_system_init();
     TZ01_console_init();
-
+    
+    sprintf(msg, "BLE_tz1em_init(): %d\r\n", ret);
+    TZ01_console_puts(msg);
+    
+    ret = BLE_init(0);
+    sprintf(msg, "BLE_init(): %d\r\n", ret);
+    TZ01_console_puts(msg);
+    if (ret != 0) {
+        goto systerm;
+    }
+    
     for (;;) {
         if (TZ01_system_run() == RUNEVT_POWOFF) {
             /* Power off operation detected */
             break;
         }
+        BLE_main();
     }
-
+    
+systerm:
+    TZ01_system_term();
+    
     TZ01_console_puts("Program terminated.\r\n");
     return 0;
 }

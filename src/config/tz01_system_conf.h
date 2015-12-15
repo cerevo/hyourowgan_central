@@ -55,7 +55,7 @@ typedef enum {
 #define TZ01_SYSTEM_PWSW_PORT_SW     (1)    /*!< IN:  Power Switch */
 #define TZ01_SYSTEM_PWSW_PORT_UVD    (4)    /*!< IN:  UVdetect */
 
-#define TZ01_SYSTEM_PW_HLD_DELAY    (2000000)   /*!< Power Hold delay(us) */
+#define TZ01_SYSTEM_PW_HLD_DELAY    (500000)   /*!< Power Hold delay(us) */
 #define TZ01_SYSTEM_PWSW_CHK_INTVAL (400)       /*!< PowerSwitch: Check interval (ms) */
 #define TZ01_SYSTEM_PW_OFF_CNT      (5)         /*!< PowerSwitch: Power off count (1 - 16) */
 #endif

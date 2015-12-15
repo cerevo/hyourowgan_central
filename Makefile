@@ -1,5 +1,5 @@
 #Application settings.
-TARGET=hrg_central_1.36.1
+TARGET=hrg_central
 DFP_VER=1.36.1
 
 ifeq ($(DFP_VER),)
@@ -25,7 +25,7 @@ LIBS    =
 
 #Include dir, Source files.
 INCLUDE = -IRTE -IRTE/Device/TZ1001MBG
-SOURCES = src/main.c
+SOURCES = src/main.c src/ble_central.c
 include *.mk
 
 #Objects

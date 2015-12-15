@@ -6,6 +6,7 @@
 
  /*
  * COPYRIGHT (C) 2014
+ 
  * TOSHIBA CORPORATION SEMICONDUCTOR & STORAGE PRODUCTS COMPANY
  * ALL RIGHTS RESERVED.
  *
@@ -114,7 +115,7 @@ extern "C" {
 
 // <h> Connection parameter configuration
 //   <q> Enable out of spec of BLE 4.0 feature
-#define BLELIB_ENABLE_OUT_OF_SPEC_BLE_4_0 (1)
+#define BLELIB_ENABLE_OUT_OF_SPEC_BLE_4_0 (0)
 //   <h> Connection parameter for low power on
 //     <o> minimum connection interval (n * 1.25ms) <6-3200>
 #define BLELIB_MIN_CONNECTION_INTERVAL_LOWPOWER_ON (40)
@@ -184,12 +185,12 @@ extern "C" {
 
 // <h> Scan parameter
 //   <o> scan interval (n * 0.625ms) <0x4-0x4000>
-#define BLELIB_SCAN_INTERVAL	(0x2000)
+#define BLELIB_SCAN_INTERVAL	(0x800)
 #if (BLELIB_SCAN_INTERVAL < 0x4) || (BLELIB_SCAN_INTERVAL > 0x4000)
 #error BLELIB_SCAN_INTERVAL must be in range from 0x4 to 0x4000
 #endif
 //   <o> scan window (n * 0.625ms) <0x4-0x4000>
-#define BLELIB_SCAN_WINDOW (0x2000)
+#define BLELIB_SCAN_WINDOW (0x800)
 #if (BLELIB_SCAN_WINDOW < 0x4) || (BLELIB_SCAN_WINDOW > 0x4000)
 #error BLELIB_SCAN_WINDOW must be in range from 0x4 to 0x4000
 #endif

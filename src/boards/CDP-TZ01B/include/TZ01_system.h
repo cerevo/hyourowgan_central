@@ -55,6 +55,12 @@ bool TZ01_system_init(void);
  */
 TZ01_system_RUNEVT TZ01_system_run(void);
 
+/**
+ * @brief Terminate system library.
+ *
+ */
+void TZ01_system_term(void);
+
 
 
 
@@ -124,6 +130,5 @@ bool TZ01_system_tick_is_active(TZ01_SYSTEM_TICK_NO tim_no);
  * @retval false: Not timeout.
  */
 bool TZ01_system_tick_check_timeout(TZ01_SYSTEM_TICK_NO tim_no);
-
 
 #endif /* _TZ01_SYSTEM_H_ */

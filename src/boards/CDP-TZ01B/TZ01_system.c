@@ -294,3 +294,10 @@ TZ01_system_RUNEVT TZ01_system_run(void)
 #endif
     return RUNEVT_NONE;
 }
+
+void TZ01_system_term(void)
+{
+#if TZ01_POW_MGR
+    tz01_system_pwsw_powoff();
+#endif
+}

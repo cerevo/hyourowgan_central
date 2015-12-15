@@ -283,7 +283,7 @@
 //   <o8> DMA Channel <0-7>
 //   <o9> Handshake Channel <0-7>
 //  </e>
-#define RTE_SPI3 1
+#define RTE_SPI3 0
 #if RTE_SPI3
 #define RTE_SPIM3_CS_N_ID 2
 #define RTE_SPIM3_CLK_ID 2
@@ -347,7 +347,7 @@
 //   <o6> DMA Channel <0-7>
 //   <o7> Handshake Channel <0-7>
 //  </e>
-#define RTE_I2C1 1
+#define RTE_I2C1 0
 #if RTE_I2C1
 #define RTE_I2C1_DATA_ID 1
 #define RTE_I2C1_CLK_ID 1
@@ -377,7 +377,7 @@
 //   <o6> DMA Channel <0-7>
 //   <o7> Handshake Channel <0-7>
 //  </e>
-#define RTE_I2C2 1
+#define RTE_I2C2 0
 #if RTE_I2C2
 #define RTE_I2C2_DATA_ID 2
 #define RTE_I2C2_CLK_ID 2
@@ -473,7 +473,7 @@
 // <i> Configuration settings for Driver_UART2 in component ::Drivers:UART
 //  <o1> UA2_RXD pin <1=>MCU_UA2_RXD
 //  <o2> UA2_TXD pin <1=>MCU_UA2_TXD
-#define RTE_UART2 0
+#define RTE_UART2 1
 #if RTE_UART2
 #define RTE_UA2_RXD_ID 1
 #define RTE_UA2_TXD_ID 1
@@ -485,7 +485,7 @@
 //   <o1> UA2_RTS_N pin <1=>MCU_UA2_RTS_N
 //   <o2> UA2_CTS_N pin <1=>MCU_UA2_CTS_N
 //  </e>
-#define RTE_UART2_HW_FLOW 0
+#define RTE_UART2_HW_FLOW 1
 #if RTE_UART2 && RTE_UART2_HW_FLOW
 #define RTE_UA2_RTS_N_ID 1
 #define RTE_UA2_CTS_N_ID 1
@@ -682,7 +682,7 @@
 // </e>
 
 // <e> RNG (Random Number Generator)
-#define RTE_RNG 0
+#define RTE_RNG 1
 // </e>
 
 // <e> NOR (internal flash)
@@ -738,7 +738,7 @@
 //   <o2.6> 6ch   <0=> not shared <1=> shared
 //   <o2.7> 7ch   <0=> not shared <1=> shared
 //  </h>
-#define RTE_SDMAC 0
+#define RTE_SDMAC 1
 #if RTE_SDMAC
 #define RTE_SDMAC_SHARED_DMA_CHANNEL       0x00
 #define RTE_SDMAC_SHARED_HANDSHAKE_CHANNEL 0x00
