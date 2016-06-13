@@ -55,6 +55,10 @@ int main(void)
         goto systerm;
     }
     
+
+    TZ01_console_puts("Cerevo BlueNinja\r\n");
+    TZ01_console_puts("BLE Central DEMO\r\n");
+    
     for (;;) {
         if (TZ01_system_run() == RUNEVT_POWOFF) {
             /* Power off operation detected */
@@ -65,7 +69,6 @@ int main(void)
     
 systerm:
     TZ01_system_term();
-    
     TZ01_console_puts("Program terminated.\r\n");
     return 0;
 }

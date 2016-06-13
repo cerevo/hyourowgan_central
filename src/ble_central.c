@@ -134,6 +134,7 @@ void connectionCompleteCb(const uint8_t status, const bool master, const uint64_
 {
     sprintf(msg, "status=%d, master=%d, bdaddr=%llx conn_interval=%d\r\n", status, master, bdaddr, conn_interval);
     TZ01_console_puts(msg);
+
     BLELib_requestMtuExchange(40);
 }
 
@@ -366,7 +367,7 @@ void notificationReceived(const BLELib_ClientStatus status, const BLELib_Opposit
     sprintf(msg, "Received bytes=%d\r\n", value_len);
     TZ01_console_puts(msg);
     
-    if (value_len == 18) {
+    if (value_len >= 18) {
         gx = (int16_t *)&value[0];
         gy = (int16_t *)&value[2];
         gz = (int16_t *)&value[4];

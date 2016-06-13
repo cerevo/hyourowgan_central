@@ -1,13 +1,13 @@
 /**
  * @file tz1sm_hal.h
- * @brief a header file for TZ10xx TWiC for Bluetooth 4.0 Smart
- * @version V1.0.0
+ * @brief a header file for TZ10xx TWiC for Bluetooth 4.0/4.1 Smart
+ * @version V1.2.0
  * @date $LastChangedDate$
  * @note
  */
 
 /*
- * COPYRIGHT (C) 2014
+ * COPYRIGHT (C) 2014 2015
  * TOSHIBA CORPORATION SEMICONDUCTOR & STORAGE PRODUCTS COMPANY
  * ALL RIGHTS RESERVED.
  *
@@ -520,6 +520,15 @@ void tz1smHalRegisterCb(const tz1smHalCb_t * const cb);
  * Low:  HCI mode,
  * High: Application mode */
 #define TZ1SM_HAL_GPIO_BLE_CTS 11
+
+/* BLE GPIO5, MCU GPIO_11/CTS/PWM3 Workaround */
+/* Configuration settings for Driver_GPIO */
+typedef struct tz1sm_gpio_cts_configuration {
+  bool inheritance;
+  GPIO_DIRECTION dir;
+  GPIO_EVENT event;
+  GPIO_SignalEvent_t cb_event;
+} tz1sm_gpio_cts_configuration_t;
 
 /*
  * @brief

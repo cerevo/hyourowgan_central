@@ -91,8 +91,8 @@
 #define RTE_GPIO_13_ID 0
 #define RTE_GPIO_14_ID 0
 #define RTE_GPIO_15_ID 0
-#define RTE_GPIO_16_ID 1
-#define RTE_GPIO_17_ID 1
+#define RTE_GPIO_16_ID 2
+#define RTE_GPIO_17_ID 2
 #define RTE_GPIO_18_ID 2
 #define RTE_GPIO_19_ID 2
 #define RTE_GPIO_20_ID 1
