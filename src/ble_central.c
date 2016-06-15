@@ -432,11 +432,6 @@ int BLE_init(uint8_t id)
         return 1;   //invalid id
     }
 
-    /* initialize BLELib */
-//    int ret;
-//    ret = BLELib_initialize(hrgn_bdaddr, BLELIB_BAUDRATE_2304, &tz01_common_callbacks, NULL, NULL, NULL);
-//
-//    return ret;
     return 0;
 }
 
@@ -485,14 +480,13 @@ void BLE_main(void)
         break;
     case BLELIB_STATE_SCANNING:
         if ((is_devfound) && (BLELib_hasEvent() == false)) {
+            BLELib_stopScan();
+            is_scan = false;
             BLELib_connect(peripheral_bdaddr, peripheral_random_addr);    // -> connectionCompleteCb()
             is_devfound = false;
         }
         break;
     case BLELIB_STATE_ONLINE:
-        if (is_scan == true) {
-            is_scan = false;
-        }
         break;
     }
     
