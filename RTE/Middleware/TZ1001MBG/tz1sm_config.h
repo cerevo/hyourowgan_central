@@ -79,11 +79,11 @@
  * perform BLE 4.1 functions if you are using BLE4.1.
  *
  */
-#undef TWIC_BLE_HWIP_V41
+#define TWIC_BLE_HWIP_V41
 #undef TWIC_BLE_HWIP_V41_COMPAT_V40
 /* Maximum Masters + Maximum Slaves should be <=5. */
-#undef TWIC_BLE_HWIP_V41_MASTERS /* upto 4 remote Slaves */
-#undef TWIC_BLE_HWIP_V41_SLAVES /* upto 2 remote Masters */
+#define TWIC_BLE_HWIP_V41_MASTERS   (1) /* upto 4 remote Slaves */
+#define TWIC_BLE_HWIP_V41_SLAVES    (1) /* upto 2 remote Masters */
 
 
 /*
